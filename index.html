@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thamy Cake's Doceria</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Thamy Cake's <span>Doceria</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="https://www.instagram.com/thamycakees?igsh=a2YyOGg3NXV4ZGxw">Instagram</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero-banner">
+        <div class="banner-content">
+            <h1>Bem-vindo à<br><span>Thamy Cake's Doceria</span></h1>
+            <p>Aqui, o amor e a doçura caminham juntos em cada pedaço.</p>
+            <a href="#produtos" class="btn-banner">Conheça Nossos Doces</a>
+        </div>
+    </section>
+
+    <section id="produtos" class="produtos-section">
+        <h2>Conheça os deliciosos produtos da Thamy Cake's</h2>
+        <div class="divisor-doce">🧁</div>
+
+        <div class="produtos-grid">
+            <div class="produto-card">
+                <div class="badge-destaque">Mais Pedido</div>
+                <img src="img/WhatsApp Image 2026-05-08 at 11.48.30.jpeg" alt="Palha Italiana">
+                <h3>Palha Italiana de Ninho com nutella trufada</h3>
+                <p>Nossa deliciosa palha italiana artesanal de ninho com recheio de oreo trufada.</p>
+                <p class="preco-produto">R$ 8,00</p>
+                <button class="btn-comprar" onclick="adicionarAoPedido('Palha Italiana de Ninho', 8.00)">Adicionar ao
+                    Pedido</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="img/WhatsApp Image 2026-05-08 at 11.48.43.jpeg" alt="palha italiana 2">
+                <h3>ninho com nutella</h3>
+                <p>Nossa primeira palha italiana artesanal, ninho com recheio de nutella.</p>
+                <p class="preco-produto">R$ 5,00</p>
+                <button class="btn-comprar" onclick="adicionarAoPedido('ninho com nutella', 5.00)">Adicionar ao
+                    Pedido</button>
+            </div>
+
+            <div class="produto-card">
+                <img src="img/WhatsApp Image 2026-05-08 at 11.49.13.jpeg" alt="Bolo de Pote">
+                <h3>Palha italiananinho com oreo</h3>
+                <p>Nossa deliciosa palha italiana artesanal de ninho com recheio de oreo.</p>
+                <p class="preco-produto">R$ 5,00</p>
+                <button class="btn-comprar" onclick="adicionarAoPedido('ninho com oreo', 5.00)">Adicionar ao
+                    Pedido</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="checkout-container" class="checkout-section" style="display: none;">
+        <div class="checkout-box">
+            <h2>Resumo da Encomenda</h2>
+
+            <div id="lista-itens-pedido"></div>
+
+            <div class="total-container">
+                <span>Total do Pedido:</span>
+                <span id="valor-total-pedido">R$ 0,00</span>
+            </div>
+
+            <form id="form-pagamento">
+                <div class="campo-grupo">
+                    <label for="nome-cliente">Seu Nome:</label>
+                    <input type="text" id="nome-cliente" required placeholder="Digite seu nome">
+                </div>
+                <div class="endereco-grid">
+                    <div class="campo-grupo">
+                        <label for="rua-cliente">Rua:</label>
+                        <input type="text" id="rua-cliente" required placeholder="Nome da rua">
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="numero-cliente">Número:</label>
+                        <input type="text" id="numero-cliente" required placeholder="Nº">
+                    </div>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="bairro-cliente">Bairro:</label>
+                    <input type="text" id="bairro-cliente" required placeholder="Digite seu bairro">
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="referencia-cliente">Ponto de Referência:</label>
+                    <input type="text" id="referencia-cliente" placeholder="Ex: Próximo ao mercado X">
+                </div>
+                <div class="campo-grupo">
+                    <label>Forma de Pagamento:</label>
+                    <div class="opcoes-pagamento">
+                        <label class="radio-label">
+                            <input type="radio" name="metodo-pagamento" value="Pix" checked
+                                onclick="mudarMetodoPagamento()"> Pix
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="metodo-pagamento" value="Cartão" onclick="mudarMetodoPagamento()">
+                            Cartão (Crédito/Débito)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="metodo-pagamento" value="Dinheiro"
+                                onclick="mudarMetodoPagamento()"> Dinheiro
+                        </label>
+                    </div>
+                </div>
+
+                <div id="campo-troco" class="campo-grupo dinamic-field" style="display: none;">
+                    <label for="valor-troco">Precisa de troco para quanto?</label>
+                    <input type="text" id="valor-troco" placeholder="Ex: Troco para R$ 50,00">
+                </div>
+
+                <div id="campo-pix" class="campo-grupo dinamic-field text-center">
+                    <p class="aviso-pix">Escaneie o QR Code abaixo para pagar via PIX:</p>
+                    <img src="img/Captura de tela 2026-05-18 130844.png" class="qr-code-img" alt="QR Code PIX">
+                    <p class="Chave-copia">Chave PIX: <strong>(74) 99933-5607</strong></p>
+                </div>
+
+                <button type="submit" class="btn-finalizar">Confirmar e Enviar Pedido via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

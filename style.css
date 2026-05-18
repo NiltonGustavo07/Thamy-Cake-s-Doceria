@@ -1,0 +1,416 @@
+/* RESET DE ESTILOS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #fcf8f6;
+    color: #4a3b32;
+}
+
+/* NAVBAR */
+header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #d47a94;
+}
+
+header .logo span {
+    color: #8c6239;
+    font-weight: 400;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #4a3b32;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #d47a94;
+}
+
+.hero-banner {
+    /* O linear-gradient coloca uma película escura transparente sobre a foto para o texto branco se destacar */
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('img/WhatsApp Image 2026-05-08 at 11.48.43.jpeg') no-repeat center center;
+    background-size: cover; /* Faz a imagem cobrir todo o espaço do banner sem distorcer */
+    height: 75vh; /* Altura ideal para telas de computador e celular */
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    position: relative;
+}
+
+
+.banner-content h1 {
+    font-size: 3.5rem;
+    color: #ffffff;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.banner-content h1 span {
+    color: #d47a94;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn-banner {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: #ffffff;
+    color: #d47a94;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn-banner:hover {
+    transform: translateY(-3px);
+    background-color: #5c3d2e;
+    color: #ffffff;
+}
+
+/* SEÇÃO DE PRODUTOS (Igual à seção cinza/branca do vídeo) */
+.produtos-section {
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.produtos-section h2 {
+    font-size: 2rem;
+    color: #4a3b32;
+    margin-bottom: 10px;
+}
+
+.divisor-doce {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+/* GRID DE PRODUTOS DE 3 COLUNAS */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* CARDS DE PRODUTO */
+.produto-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    border: 1px solid #f0e6e6;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(212, 122, 148, 0.15);
+}
+
+.produto-card img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.produto-card h3 {
+    font-size: 1.3rem;
+    color: #4a3b32;
+    margin-bottom: 10px;
+}
+
+.produto-card p {
+    font-size: 0.95rem;
+    color: #7a6a60;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* SELO DE DESTAQUE (Badge) */
+.badge-destaque {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #ff4d6d;
+    color: #ffffff;
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+.btn-comprar {
+    background-color: #d47a94;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto; /* Garante o botão sempre alinhado embaixo */
+}
+
+.btn-comprar:hover {
+    background-color: #b35c75;
+}
+
+/* BOTÃO DE VER TODOS (Estilo o rodapé cinza do vídeo) */
+.ver-todos-container {
+    margin-top: 50px;
+}
+
+.btn-ver-todos {
+    display: inline-block;
+    background-color: #5c3d2e;
+    color: #ffffff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-ver-todos:hover {
+    background-color: #d47a94;
+}
+
+/* RESPONSIVIDADE (Para celulares) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav ul li {
+        margin: 0 15px;
+    }
+    .banner-content h1 {
+        font-size: 2.3rem;
+    }
+}
+
+/* SEÇÃO DE CHECKOUT */
+.checkout-section {
+    padding: 60px 8%;
+    background-color: #f5ece9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-width: 500px;
+    width: 100%;
+}
+
+.checkout-box h2 {
+    color: #5c3d2e;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#produto-selecionado {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #7a6a60;
+}
+
+.campo-grupo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.campo-grupo label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4a3b32;
+}
+
+.campo-grupo input[type="text"] {
+    padding: 12px;
+    border: 1px solid #dcd0cc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.campo-grupo input[type="text"]:focus {
+    border-color: #d47a94;
+}
+
+/* Opções Radio */
+.opcoes-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fdfbfc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #f0e6e6;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Área do PIX e QR Code */
+.text-center {
+    text-align: center;
+}
+
+.aviso-pix {
+    font-size: 0.9rem;
+    color: #ff4d6d;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.qr-code-img {
+    width: 160px;
+    height: 160px;
+    margin: 10px auto;
+    border: 3px solid #d47a94;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.Chave-copia {
+    font-size: 0.9rem;
+    margin-top: 5px;
+    color: #5c3d2e;
+}
+
+/* Botão Finalizar */
+.btn-finalizar {
+    width: 100%;
+    background-color: #25d366; /* Cor do WhatsApp */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-finalizar:hover {
+    background-color: #1ebd59;
+}
+
+
+/* Preço nos cards de produto */
+.preco-produto {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #5c3d2e;
+    margin-bottom: 15px;
+}
+
+/* Área de resumo de itens no carrinho */
+#lista-itens-pedido {
+    text-align: left;
+    background: #faf6f5;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px dashed #d47a94;
+}
+
+.item-linha {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Caixa do Valor Total */
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d47a94;
+    background-color: #fdfbfc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #f0e6e6;
+}
+
+/* Layout para colocar Rua e Número na mesma linha */
+.endereco-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Deixa o campo da rua maior que o do número */
+    gap: 15px;
+}
+
+@media (max-width: 480px) {
+    .endereco-grid {
+        grid-template-columns: 1fr; /* No celular muito pequeno, eles ficam um embaixo do outro */
+        gap: 0;
+    }
+}
