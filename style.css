@@ -1,4 +1,4 @@
-/* RESET DE ESTILOS */
+
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +15,6 @@ body {
     color: #4a3b32;
 }
 
-/* NAVBAR */
 header {
     background-color: #ffffff;
     display: flex;
@@ -172,7 +171,6 @@ nav ul li a:hover {
     line-height: 1.5;
 }
 
-/* SELO DE DESTAQUE (Badge) */
 .badge-destaque {
     position: absolute;
     top: 15px;
@@ -195,14 +193,13 @@ nav ul li a:hover {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: auto; /* Garante o botão sempre alinhado embaixo */
+    margin-top: auto;
 }
 
 .btn-comprar:hover {
     background-color: #b35c75;
 }
 
-/* BOTÃO DE VER TODOS (Estilo o rodapé cinza do vídeo) */
 .ver-todos-container {
     margin-top: 50px;
 }
@@ -224,7 +221,6 @@ nav ul li a:hover {
     background-color: #d47a94;
 }
 
-/* RESPONSIVIDADE (Para celulares) */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -295,7 +291,6 @@ nav ul li a:hover {
     border-color: #d47a94;
 }
 
-/* Opções Radio */
 .opcoes-pagamento {
     display: flex;
     flex-direction: column;
@@ -341,10 +336,9 @@ nav ul li a:hover {
     color: #5c3d2e;
 }
 
-/* Botão Finalizar */
 .btn-finalizar {
     width: 100%;
-    background-color: #25d366; /* Cor do WhatsApp */
+    background-color: #25d366; 
     color: white;
     border: none;
     padding: 14px;
@@ -360,8 +354,6 @@ nav ul li a:hover {
     background-color: #1ebd59;
 }
 
-
-/* Preço nos cards de produto */
 .preco-produto {
     font-size: 1.25rem;
     font-weight: 700;
@@ -369,7 +361,6 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-/* Área de resumo de itens no carrinho */
 #lista-itens-pedido {
     text-align: left;
     background: #faf6f5;
@@ -401,17 +392,15 @@ nav ul li a:hover {
     border: 1px solid #f0e6e6;
 }
 
-/* Layout para colocar Rua e Número na mesma linha */
 .endereco-grid {
     display: grid;
-    grid-template-columns: 3fr 1fr; /* Deixa o campo da rua maior que o do número */
+    grid-template-columns: 3fr 1fr; 
     gap: 15px;
 }
 
 @media (max-width: 480px) {
     .endereco-grid {
-        grid-template-columns: 1fr; /* No celular muito pequeno, eles ficam um embaixo do outro */
+        grid-template-columns: 1fr; 
         gap: 0;
     }
 }
-

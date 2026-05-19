@@ -1,4 +1,4 @@
-// Array para guardar os produtos selecionados pelo cliente
+
 let carrinho = [];
 let totalPedido = 0;
 
