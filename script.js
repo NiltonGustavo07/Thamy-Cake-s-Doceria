@@ -1,4 +1,3 @@
-
 let carrinho = [];
 let totalPedido = 0;
 
