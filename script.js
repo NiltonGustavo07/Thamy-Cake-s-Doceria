@@ -37,16 +37,15 @@ function atualizarInterfaceCheckout() {
         const subtotalItem = item.preco * item.quantidade;
         totalPedido += subtotalItem; 
 
-        
+       
         containerItens.innerHTML += `
             <div class="item-linha">
                 <span>${item.quantidade}x ${item.nome}</span>
                 <span>R$ ${subtotalItem.toFixed(2).replace('.', ',')}</span>
             </div>
-        `;
+         `;
     });
 
-    
     containerTotal.innerText = `R$ ${totalPedido.toFixed(2).replace('.', ',')}`;
 }
 
