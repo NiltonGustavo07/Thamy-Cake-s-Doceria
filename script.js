@@ -138,7 +138,7 @@ document.getElementById('form-pagamento').addEventListener('submit', function(e)
 
     const numeroWhatsApp = "5574999335607"; 
 
-    const mensagem = `🧁 *NOVO PEDIDO - THAMY CAKES* 🧁\n\n` +
+    const mensagem = ` *NOVO PEDIDO - THAMY CAKES* 🧁\n\n` +
                      `👤 *Cliente:* ${nomeCliente}\n\n` +
                      `📍 *Endereço de Entrega:*\n` +
                      `• Rua: ${ruaCliente}, Nº ${numeroCliente}\n` +
