@@ -372,11 +372,56 @@ nav ul li a:hover {
 .item-linha {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
+    align-items: center;
+    margin-bottom: 12px;
     font-size: 0.95rem;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #ede8e6;
 }
 
-/* Caixa do Valor Total */
+.item-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 3px;
+}
+
+.item-botoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 15px;
+}
+
+.btn-quantidade {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background-color: #ffffff;
+    color: #d47a94;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-quantidade:hover {
+    transform: scale(1.05);
+}
+
+.quantidade-display {
+    width: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: #4a3b32;
+}
+
 .total-container {
     display: flex;
     justify-content: space-between;

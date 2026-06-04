@@ -33,20 +33,61 @@ function atualizarInterfaceCheckout() {
     totalPedido = 0;
 
     
-    carrinho.forEach(item => {
+    carrinho.forEach((item, indice) => {
         const subtotalItem = item.preco * item.quantidade;
         totalPedido += subtotalItem; 
 
        
         containerItens.innerHTML += `
             <div class="item-linha">
-                <span>${item.quantidade}x ${item.nome}</span>
-                <span>R$ ${subtotalItem.toFixed(2).replace('.', ',')}</span>
+                <div class="item-info">
+                    <span>${item.nome}</span>
+                    <span>R$ ${subtotalItem.toFixed(2).replace('.', ',')}</span>
+                </div>
+                <div class="item-botoes">
+                    <button class="btn-quantidade" onclick="diminuirQuantidade(${indice})">−</button>
+                    <span class="quantidade-display">${item.quantidade}</span>
+                    <button class="btn-quantidade" onclick="aumentarQuantidade(${indice})">+</button>
+                </div>
             </div>
          `;
     });
 
     containerTotal.innerText = `R$ ${totalPedido.toFixed(2).replace('.', ',')}`;
+}
+
+
+function aumentarQuantidade(indice) {
+    if (indice >= 0 && indice < carrinho.length) {
+        carrinho[indice].quantidade += 1;
+        atualizarInterfaceCheckout();
+    }
+}
+
+
+function diminuirQuantidade(indice) {
+    if (indice >= 0 && indice < carrinho.length) {
+        if (carrinho[indice].quantidade > 1) {
+            carrinho[indice].quantidade -= 1;
+        } else {
+            removerDoCarrinho(indice);
+            return;
+        }
+        atualizarInterfaceCheckout();
+    }
+}
+
+
+function removerDoCarrinho(indice) {
+    if (indice >= 0 && indice < carrinho.length) {
+        carrinho.splice(indice, 1);
+        atualizarInterfaceCheckout();
+        
+        if (carrinho.length === 0) {
+            const checkoutSecao = document.getElementById('checkout-container');
+            checkoutSecao.style.display = 'none';
+        }
+    }
 }
 
 
